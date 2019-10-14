@@ -3,8 +3,8 @@
 Esse tutorial explica como funciona o Kubernetes, junto a ele vamos abordar brevemente sobre o Traefik, Helm e o Jenkins.
 
 ## Pré-requisitos
-* [VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds_6_0) 6.0.10
-* [Vagrant](https://releases.hashicorp.com/vagrant/) 2.2.5
+* [VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds_6_0) - 6.0.10
+* [Vagrant](https://releases.hashicorp.com/vagrant/) - 2.2.5
 
 
 ## Público-alvo
