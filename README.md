@@ -21,5 +21,5 @@ O público-alvo deste tutorial é para pessoas que desejam conhecer mais sobre o
 
 ## Labs
 
-* [Pré-requisitos] (docs / 01-requisitos.md)
-* [Iniciando Lab] (docs / 02-iniciando-lab.md)
+* [Pré-requisitos](docs/01-requisitos.md)
+* [Iniciando Lab](docs/02-iniciando-lab.md)
