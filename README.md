@@ -13,11 +13,11 @@ O público-alvo deste tutorial é para pessoas que desejam conhecer mais sobre o
 
 ## Detalhes do cluster
 
-* [Docker](https://github.com/docker/docker-ce) 18.09
-* [Kubernetes](https://github.com/kubernetes/kubernetes) 1.15.3
-* [Helm](https://github.com/helm/helm) v2.14.0
-* [Traefik](https://github.com/containous/traefik) 
-* [Jenkins](https://jenkins.io) 
+* [Docker](https://github.com/docker/docker-ce) - 18.09.9
+* [Kubernetes](https://github.com/kubernetes/kubernetes) - 1.15.3
+* [Helm](https://github.com/helm/helm) - v2.14.0
+* [Traefik](https://github.com/containous/traefik) - 
+* [Jenkins](https://jenkins.io) - 
 
 ## Labs
 
