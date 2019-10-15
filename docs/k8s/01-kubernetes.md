@@ -29,15 +29,27 @@ Kubernetes (K8s) é um sistema de orquestração de contêiners open-source que 
 
 Kubernetes é uma tecnologia de cluster. Isso significa que você verá um cluster de computadores como uma entidade. Você não implantará um aplicativo em um computador específico, mas em algum lugar do cluster. As maquinas do cluster podem ter características diferentes e o trabalho do Kubernetes é determinar qual o  computador(node) que melhor atenda aos requisitos do seu aplicativo.
 
+<p align="center">
+<img width="460" height="300" src="imagens/cluster.png">
+</p>
+
 Como o Kubernetes adora camadas, existem termos para determinadas funções dentro do kubernetes
 
 ## [Nodes](https://kubernetes.io/docs/concepts/overview/components/#node-components)
 
 Cada computador no cluster é chamado de nó. Eventualmente, os nós hospedarão seus aplicativos. Os nós podem se espalhar por todo o mundo em diferentes datacenters (Azure, AWS, Google Cloud) e é função do Kubernetes fazê-los se comunicar como se fossem vizinhos.
 
+<p align="center">
+<img width="460" height="300" src="imagens/node.png">
+</p>
+
 ## [Pods](https://kubernetes.io/docs/concepts/workloads/pods/pod/)
 
 O Kubernetes adiciona a noção de Pods ao redor de seus contêineres. Os pods são a menor unidade que você implantará no cluster. O Pod não costuma andar sozinho um único Pod pode conter vários contêineres. Por estarem juntos, é garantido que esses containers compartilhem os mesmos recursos.
+
+<p align="center">
+<img width="460" height="300" src="imagens/pod.png">
+</p>
 
 ## [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) e [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 
@@ -45,7 +57,9 @@ Aqui vem a parte divertida! os Deployments são os requisitos que você fornece 
 * Ei, Kube, mantenha sempre 2 instâncias desses Pods em execução.
 
 Solicitado o Deploy, o Kubernetes imediatamente cria um ReplicaSet o trabalho dele é garantir que seu cluster hospede 2 réplicas dos seus Pods a qualquer momento,Não se preocupe em manter ou alterar um ReplicaSet, elas são controladas pelo próprio deployment considere então o ReplicaSet um recurso operacional do Deployment.
-
+<p align="center">
+<img width="460" height="300" src="imagens/deployment_replicaset.png">
+</p>
 
 ## [Services](https://kubernetes.io/docs/concepts/services-networking/service/)
 
@@ -56,6 +70,11 @@ O ciclo de vida dos pods é irregular; eles vêm e vão pela vontade de Kubernet
 
 Então, como você pode enviar uma solicitação para seu aplicativo se não sabe ao certo onde ele mora? A resposta está nos serviços.
 Os serviços definem conjuntos de seus Pods implantados, para que você possa enviar uma solicitação ao pod disponível.
+
+<p align="center">
+<img width="460" height="300" src="imagens/deployment_replicaset.png">
+</p>
+
 
 Exitem 3 tipos de serviços no kubernetes: 
 
@@ -68,11 +87,18 @@ Um serviço NodePort é a maneira mais primitiva de obter tráfego externo diret
 3. LoadBalance
 Um serviço LoadBalancer é a maneira padrão de expor um serviço à Internet. No nosso lab, isso ativará um Balanceador de Carga de Rede que fornecerá um único endereço IP que encaminhará todo o tráfego para o serviço.
 
+
+
 ## [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
 
 É a segregação lógica de nosso cluster, permitem criar divisões de 'ambientes' dentro do nosso cluster.
 O que nos possibilita, por exemplo, ter N ambientes lógicos como Desenvolvimento, Homologação e Produção, ou seja, são fatias de nosso cluster físico.
 Tudo vive dentro de um namespace, os recursos do kubernetes nascem no namespace kube-system, e para nós, (caso nenhum namespaces seja definido) tudo será enviado ao namespaces default.
+
+<p align="center">
+<img width="460" height="300" src="imagens/namespace.png">
+</p>
+
 
 
 ## [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
