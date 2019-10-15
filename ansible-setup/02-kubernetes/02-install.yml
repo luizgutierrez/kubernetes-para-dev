@@ -1,0 +1,52 @@
+  - name: Adicionar chave de assinatura apt para o Kubernetes
+    apt_key:
+      url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      state: present
+
+  - name: Adicionar repositório apt para Kubernetes
+    apt_repository:
+      repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+      state: present
+      filename: kubernetes.list
+
+  - name: Instalar binários do Kubernetes
+    apt: 
+      name: "{{ packages }}"
+      state: present
+      update_cache: yes
+    vars:
+      packages:
+        - kubelet=1.15.3-00 
+        - kubeadm=1.15.3-00
+        - kubectl=1.15.3-00
+    register: k8s_packages
+
+  - name: Prevenir upgrade pacotes
+    command: apt-mark hold "{{ item }}"
+    with_items:
+        - docker-ce
+        - docker-ce-cli
+        - kubeadm
+        - kubectl
+        - kubelet
+    when: k8s_packages.changed
+
+  - stat: path=/etc/default/kubelet
+    register: ks8_args_path
+
+  - name: Configurar node ip
+    file: 
+      path: /etc/default/kubelet
+      state: touch 
+    when: ks8_args_path.stat.exists is defined and not ks8_args_path.stat.exists
+  - lineinfile:
+      path: /etc/default/kubelet
+      line: KUBELET_EXTRA_ARGS=--node-ip={{ node_ip }}
+    register: node_args
+
+  - name: Restart kubelet
+    service:
+      name: kubelet
+      daemon_reload: yes
+      state: restarted
+    when: node_args.changed

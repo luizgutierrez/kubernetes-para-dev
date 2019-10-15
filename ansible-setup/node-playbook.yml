@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - include: 01-docker/01-install.yml
+    - include: 02-kubernetes/01-swap-disable.yml
+    - include: 02-kubernetes/02-install.yml
+
+    - name: Copiar comando join para o servidor
+      copy: 
+        src: "./02-kubernetes/join-command"
+        dest: /tmp/join-command.sh
+        mode: 0777
+
+    - name: Unir nó ao cluster
+      command: sh /tmp/join-command.sh

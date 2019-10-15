@@ -1,0 +1,25 @@
+  - name: Download Helm.
+    unarchive:
+      src: https://storage.googleapis.com/kubernetes-helm/helm-v2.14.0-linux-amd64.tar.gz
+      dest: /tmp
+      creates: /usr/local/bin/helm
+      remote_src: yes
+
+  - name: Configurar Tiller Helm 
+    command: "{{ item }}"
+    become: false
+    with_items:
+      - kubectl apply -f 03-helm/02-tiller.yml
+    register: helm_config_result
+    changed_when: "'unchanged' not in helm_config_result.stdout"
+
+  - name: Move helm para bin
+    command: >
+      cp /tmp/linux-amd64/helm /usr/local/bin/helm
+      creates=/usr/local/bin/helm
+
+  - name: Helm init
+    become: false
+    command: helm init --service-account tiller
+    register: helm_init_result
+    changed_when: "'already installed' not in helm_init_result.stdout"

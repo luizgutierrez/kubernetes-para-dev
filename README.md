@@ -9,9 +9,19 @@ Esse tutorial explica como funciona o Kubernetes, junto a ele vamos abordar brev
 
 ## Público-alvo
 
-O público-alvo deste tutorial é para pessoas que desejam conhecer mais sobre o Kubernetes e como é  realizado o processo de deploy das aplicações no kubernetes. **Não** será abordado nesse tutorial conteúdos avançados do kubernetes.
+O público-alvo deste tutorial é para pessoas que desejam conhecer mais sobre o Kubernetes e como é realizado o processo de deploy das aplicações no kubernetes. **Não** será abordado nesse tutorial conteúdos avançados do kubernetes.
 
-## Detalhes do cluster
+## Introdução ao kubernetes
+* [Cluster](k8s/01-cluster.md)
+* [Nodes](k8s/02-nodes.md)
+* [Containers](k8s/03-containers.md)
+* [Pods](k8s/04-pods.md)
+* [Deployments e ReplicaSet](k8s/05-deploy-replica.md)
+* [Services](k8s/06-services.md)
+* [Namespaces](k8s/07-namespaces.md)
+* [Ingress](k8s/08-ingress.md)
+
+### Detalhes do cluster
 
 * [Docker](https://github.com/docker/docker-ce) - 18.09.9
 * [Kubernetes](https://github.com/kubernetes/kubernetes) - 1.15.3
@@ -19,7 +29,7 @@ O público-alvo deste tutorial é para pessoas que desejam conhecer mais sobre o
 * [Traefik](https://github.com/containous/traefik) - 
 * [Jenkins](https://jenkins.io) - 
 
-## Labs
+## Lab
 
 * [Pré-requisitos](docs/01-requisitos.md)
 * [Iniciando Lab](docs/02-iniciando-lab.md)

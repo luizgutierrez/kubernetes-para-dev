@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - include: 01-docker/01-install.yml
+    - include: 02-kubernetes/01-swap-disable.yml
+    - include: 02-kubernetes/02-install.yml
+    - include: 02-kubernetes/03-init.yml
+    - include: 03-helm/01-install.yml
+

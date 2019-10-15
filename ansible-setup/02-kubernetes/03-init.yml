@@ -1,0 +1,51 @@
+  - name: Iniciar docker
+    service: 
+      name: docker
+      state: started
+
+  - name: Verificar se o cluster está inicializado
+    stat: 
+      path: /etc/kubernetes/admin.conf
+    register: k8s_init
+
+  - name: Inicializar o cluster Kubernetes com o kubeadm
+    command: kubeadm init --apiserver-advertise-address="192.168.50.10" --apiserver-cert-extra-sans="192.168.50.10"  --node-name k8s-master --pod-network-cidr=10.244.0.0/16 #<caso for usar calico> --pod-network-cidr=192.168.0.0/16
+    when: k8s_init.stat.exists == false
+
+  - name: mkdir -p /home/vagrant/.kube 
+    file:
+      path: /home/vagrant/.kube
+      state: directory
+
+  - name: cp -i /etc/kubernetes/admin.conf /home/vagrant/.kube/config
+    copy: 
+      src: /etc/kubernetes/admin.conf 
+      dest: /home/vagrant/.kube/config
+      owner: vagrant
+      group: vagrant
+      remote_src: yes
+    when: k8s_init.stat.exists == false
+
+  - name: Esperar serviço k8s iniciar
+    local_action:
+      module: wait_for
+        host=192.168.50.10
+        port=6443
+        delay=1
+        timeout=300
+
+  - name: Obter versão kubernetes
+    shell: kubectl version | base64 | tr -d '\n'
+    register: version_base64
+  
+  - name: Instalar pod network
+    become: false
+    command: kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version={{ version_base64.stdout }}"
+
+  - name: Gerar o comando join
+    command: kubeadm token create --print-join-command
+    register: join_command
+
+  - name: Copiar o comando join para o arquivo local
+    local_action: copy content="{{ join_command.stdout_lines[0] }}" dest="./02-kubernetes/join-command"
+
