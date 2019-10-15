@@ -2,9 +2,10 @@
 * [VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds_6_0) - 6.0.10
 * [Vagrant](https://releases.hashicorp.com/vagrant/) - 2.2.5
 
-> Vamos instalar as versões do sistemas que utilizei para criar o tutorial
 
 ## Instalando Virtual box
+
+> Obs.: Vamos instalar as versões do sistemas que utilizei para criar o tutorial
 
 O VirtualBox 6.0 não está disponível no repositório oficial de pacotes do Linux. Mas podemos facilmente adicionar o repositório de pacotes do virtualBox e instalar o VirtualBox 6.0 a partir daí. 
 
