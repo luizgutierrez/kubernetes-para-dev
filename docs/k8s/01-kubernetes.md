@@ -9,7 +9,9 @@ Você já deve estar familiarizado com os containers(Docker). Caso esteja pode p
 
 Container nada mais é do que um ambiente isolado contido em um servidor. Os containers proporcionam uma maneira padrão de empacotar código, configurações e dependências de seu aplicativo em um único objeto. Eles compartilham recursos com o servidor e são executados como processos isolados de recursos, para exemplificar vamos imaginar um navio cargueiro com vários containers dentro. Se um produto dentro de um container se danificar, não afetará os outros containers ou o navio, pois cada um está isolado e protegido.
 
+<p align="center">
 ![](imagens/containerXVM.png)
+</p>
 
 Em vez de configurar uma máquina para hospedar seu aplicativo, você o coloca em um contêiner (junto com tudo o que seu aplicativo precisa - SO, bibliotecas, dependências, etc.). Uma vez conteinerizados, os aplicativos podem ser implantados em qualquer infraestrutura. Sejam elas máquinas virtuais, bare-metal ou várias nuvens, isso permite fazer implantações rápidas, confiáveis e consistentes, independentemente do ambiente.
 
