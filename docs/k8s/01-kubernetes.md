@@ -72,7 +72,7 @@ Então, como você pode enviar uma solicitação para seu aplicativo se não sab
 Os serviços definem conjuntos de seus Pods implantados, para que você possa enviar uma solicitação ao pod disponível.
 
 <p align="center">
-<img width="460" height="300" src="imagens/deployment_replicaset.png">
+<img width="460" height="300" src="imagens/service.png">
 </p>
 
 
