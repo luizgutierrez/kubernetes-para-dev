@@ -12,14 +12,14 @@ Esse tutorial explica como funciona o Kubernetes, junto a ele vamos abordar brev
 O público-alvo deste tutorial é para pessoas que desejam conhecer mais sobre o Kubernetes e como é realizado o processo de deploy das aplicações no kubernetes. **Não** será abordado nesse tutorial conteúdos avançados do kubernetes.
 
 ## Introdução ao kubernetes
-* [Containers](k8s/01-kubernetes.md#Conntainers)
-* [O que é Kubernetes](k8s/01-kubernetes.md#O-que-é-kubernetes)
-* [Nodes](k8s/01-kubernetes.md#nodes)
-* [Pods](k8s/01-kubernetes.md#Pods)
-* [Deployments e ReplicaSet](k8s/01-kubernetes.md#Deployment-e-ReplicaSet)
-* [Services](k8s/01-kubernetes.md#services)
-* [Namespaces](k8s/01-kubernetes.md#namespaces)
-* [Ingress](k8s/01-kubernetes.md#ingress)
+* [Containers](docs/k8s/01-kubernetes.md#Conntainers)
+* [O que é Kubernetes](docs/k8s/01-kubernetes.md#O-que-é-kubernetes)
+* [Nodes](docs/k8s/01-kubernetes.md#nodes)
+* [Pods](docs/k8s/01-kubernetes.md#Pods)
+* [Deployments e ReplicaSet](docs/k8s/01-kubernetes.md#Deployment-e-ReplicaSet)
+* [Services](docs/k8s/01-kubernetes.md#services)
+* [Namespaces](docs/k8s/01-kubernetes.md#namespaces)
+* [Ingress](docs/k8s/01-kubernetes.md#ingress)
 
 ### Ferramentas utilizadas no cluster
 
