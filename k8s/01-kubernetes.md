@@ -18,7 +18,7 @@ Diferente das maquinas virtuais os containers compartilham recursos com o servid
 Ao utilizar o compartilhamento de kernel, os containers geram uma de economia de recursos, comparada a utilização de maquinas virtuais.
 
 
-## [O que é o kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
+## [O que é kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
 
 Kubernetes (K8s) é um sistema de orquestração de contêiners open-source que automatiza a implantação, o dimensionamento e a gestão de aplicações em contêiners. Ele foi originalmente projetado pelo Google e agora é mantido pela Cloud Native Computing Foundation. Ele funciona com uma variedade de ferramentas de conteinerização, incluindo Docker.
 
