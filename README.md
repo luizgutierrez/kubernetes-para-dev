@@ -21,7 +21,7 @@ O público-alvo deste tutorial é para pessoas que desejam conhecer mais sobre o
 * [Namespaces](k8s/01-kubernetes.md#namespaces)
 * [Ingress](k8s/01-kubernetes.md#ingress)
 
-### Detalhes do cluster
+### Ferramentas utilizadas no cluster
 
 * [Docker](https://github.com/docker/docker-ce) - 18.09.9
 * [Kubernetes](https://github.com/kubernetes/kubernetes) - 1.15.3
@@ -29,7 +29,7 @@ O público-alvo deste tutorial é para pessoas que desejam conhecer mais sobre o
 * [Traefik](https://github.com/containous/traefik) - 
 * [Jenkins](https://jenkins.io) - 
 
-## Lab
+## Execução do Lab
 
 * [Pré-requisitos](docs/01-requisitos.md)
 * [Iniciando Lab](docs/02-iniciando-lab.md)
