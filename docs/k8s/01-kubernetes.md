@@ -72,7 +72,7 @@ Então, como você pode enviar uma solicitação para seu aplicativo se não sab
 Os serviços definem conjuntos de seus Pods implantados, para que você possa enviar uma solicitação ao pod disponível.
 
 <p align="center">
-<img width="460" height="300" src="imagens/service.png">
+<img width="100%" height="100%" src="imagens/service.png">
 </p>
 
 
@@ -96,7 +96,7 @@ O que nos possibilita, por exemplo, ter N ambientes lógicos como Desenvolviment
 Tudo vive dentro de um namespace, os recursos do kubernetes nascem no namespace kube-system, e para nós, (caso nenhum namespaces seja definido) tudo será enviado ao namespaces default.
 
 <p align="center">
-<img width="460" height="300" src="imagens/namespace.png">
+<img width="560" height="400" src="imagens/namespace.png">
 </p>
 
 
