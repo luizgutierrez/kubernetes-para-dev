@@ -1,0 +1,15 @@
+# Comando para codificar a senha usando base64
+echo -n "texto" | base64
+
+# Mostrando o valor codificado
+echo -n "valorcodificado | base64 --decode
+
+#subindo o ambiente
+kubectl create -f secret.yaml 
+kubectl apply -f services.yaml,deploy.yaml
+
+#destruindo o ambiente
+kubectl delete -f .
+
+#verificando pods,services,deployment e persistentvolumeclaim
+kubectl get po,svc,deploy,pvc

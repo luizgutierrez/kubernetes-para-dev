@@ -1,0 +1,12 @@
+#subindo o ambiente
+kubectl create -f configmap.yaml
+kubectl apply -f deployment.yaml,service.yaml
+
+# destruindo o ambiente
+kubectl delete -f .
+
+# Outra forma de adicionar conteudos grandes.
+kubectl create configmap nginx-content --from-file=index.html
+
+# removendo
+kubectl delete cm nginx-content

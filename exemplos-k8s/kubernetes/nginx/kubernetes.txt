@@ -1,0 +1,37 @@
+Kubernetes
+
+Nginx - Line command
+
+kubectl \
+		create deployment nginx-deploy \
+		--image=nginx
+
+kubectl \
+		expose deployment nginx-deploy \
+		--port=80 \
+		--type=NodePort \
+		--name=nginx-service
+
+
+kubectl delete deployments 
+kubectl delete svc 
+
+kubectl get po,svc
+
+
+Criando configmap 
+kubectl create configmap nginx-content --from-file=index.html
+
+#removendo 
+kubectl delete cm nginx-content
+
+#removendo
+kubectl delete -f .
+
+#Subindo 
+kubectl apply -f deployment.yaml,service.yaml 
+
+
+#ps e ifconfig
+apt-get install net-tools && \
+apt-get install -y procps
