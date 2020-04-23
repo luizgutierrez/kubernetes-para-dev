@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docusaurus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docusaurus
+  template:
+    metadata:
+      labels:
+        app: docusaurus
+    spec:
+      containers:
+        - name: docusaurus
+          image: robisongarcia/docusaurus:1.0.0
+          ports:
+            - containerPort: 3000
+          imagePullPolicy: Always
