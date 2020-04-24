@@ -8,11 +8,11 @@ Apresentaremos três exemplos.
 * NGinx - HTTP Server/Proxy
 * PostgreSQL - Banco Opensource Relacional
 
-| Serviços | Diretórios |
+| Serviços | Diretórios | 
 | ------   | ------     |
-| Docusaurus | ./docusaurus|
-| NGinx | ./nginx |
-| PostgreSql | ./postgresql
+| [Docusaurus](https://docusaurus.io/) | ./docusaurus|
+| [NGinx](https://www.nginx.com/) | ./nginx |
+| [PostgreSql](https://www.postgresql.org/) | ./postgresql
 
 Na raiz do projeto encontra-se os arquivos originais referente ao projeto [Docusaurus](https://docusaurus.io/)
 
@@ -28,7 +28,7 @@ kind: Deployment                                  # Representa o recurso neste c
 metadata:                                              
   name: docusaurus                                # Nome da aplicação
 spec:                                             # Especificações do comportamento desejado na implantação
-  replicas: 5                                     # Defini a quantidades de réplicas
+  replicas: 1                                     # Defini a quantidades de réplicas
   selector:                                       # Seletor defini as implantações e localiza os pods a gerenciar
     matchLabels:                                  # Mapa de pares "Chave e valor"
       app: docusaurus                             # O rótulo definido
