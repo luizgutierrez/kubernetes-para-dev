@@ -45,6 +45,9 @@ spec:                                             # Especificações do comporta
           imagePullPolicy: Always                 # Por padrão é setado se a imagem existir não baixar, esta opção força atualização.
 ```
 
+Links da documentação:
+[Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment)
+[apiVersion](https://kubernetes.io/docs/reference/using-api/api-overview/#api-versioning)
 
 **Service.yaml** 
 
@@ -62,7 +65,8 @@ spec:                                             # Especificações do Service
       targetPort: 3000                            # TargetPort escuta na porta 80 e faz a ponte e redireciona para a porta do container 3000  
   type: LoadBalancer                              # Type Loadbalancer torna os pods expostos acessíveis fora do cluster, por default ClusterIP
 ```
-
+Link da documentação:
+[service](https://kubernetes.io/docs/concepts/services-networking/service/)
 ## Comandos 
  
 **Subindo**
@@ -73,6 +77,11 @@ kubectl apply -f .
 **Mostrar pods,services e deployments filtrando por seletor**
 ```sh
 kubectl get po,svc,deploy --selector app=docusaurus
+```
+
+**Mostrar pods com mais detalhes**
+```sh
+kubectl get po -o wide
 ```
 
 **Escalando**
@@ -87,7 +96,7 @@ kubectl rollout status deployment.v1.apps/docusaurus
 
 **Trocando imagem**
 ```sh
-kubectl set image deployment/docusaurus app=robisongarcia/docusaurus:2.0.0
+kubectl set image deployment/docusaurus docusaurus=robisongarcia/docusaurus:2.0.0
 ```
 
 **Verificando historico de distribuição de uma imagem**
