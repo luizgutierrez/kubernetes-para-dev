@@ -67,6 +67,7 @@ spec:                                             # Especificações do Service
 ```
 Link da documentação:
 [service](https://kubernetes.io/docs/concepts/services-networking/service/)
+
 ## Comandos 
  
 **Subindo**
@@ -121,4 +122,8 @@ kubectl get po,svc,deploy --selector app=docusaurus
 **Apagando pods,services,deployments com o Seletor docusaurus**
 ```sh
 kubectl delete po,svc,deploy --selector app=docusaurus
+```
+**Conectando a um pod/container**
+```sh
+kubectl exec pod/seupod-xyz -it -- /bin/bash
 ```
